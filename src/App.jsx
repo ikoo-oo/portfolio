@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from "react";
 import React from 'react';
 import emailjs from '@emailjs/browser';
+import animate from "./assets/animate.mp4"
+import noteflow from "./assets/noteflow.PNG"
 
 // ── THEME TOKENS ──────────────────────────────────────────────
 const themes = {
@@ -606,7 +608,7 @@ export default function Portfolio() {
         <div className="about-grid">
           <div className="about-img-wrap">
             <video
-              src="src/assets/animate.mp4"
+              src= {animate}
               autoPlay loop muted playsInline
               style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: "22px" }}
             />
@@ -646,7 +648,7 @@ export default function Portfolio() {
         <div className="projects-grid">
           <div className="project-card">
             <div className="project-thumb">
-              <img src="src/assets/noteflow.PNG" alt="NoteFlow" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+              <img src= {noteflow} alt="NoteFlow" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
             </div>
             <div className="project-body">
               <div className="project-tags">
