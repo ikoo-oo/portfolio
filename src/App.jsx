@@ -555,7 +555,7 @@ export default function Portfolio() {
 
       {/* ── NAV ── */}
       <nav>
-        <div className="nav-logo">dev<span>.</span>folio</div>
+        <div className="nav-logo">iko<span>.</span>folio</div>
         <div className="nav-right">
           <div className="nav-links">
             {tx.nav.map((label, i) => (
@@ -723,13 +723,10 @@ export default function Portfolio() {
 
       {/* ── FOOTER ── */}
       <footer>
-        <div className="footer-logo">dev.folio</div>
+        <div className="footer-logo">iko.folio</div>
         <span>{tx.footerBuilt}</span>
         <div className="footer-socials">
-          <a href="#">GitHub</a>
-          <a href="#">LinkedIn</a>
-          <a href="#">Twitter</a>
-          <a href="#">Dribbble</a>
+          <a href="https://www.instagram.com/_o.ik_/">instagram</a>
         </div>
       </footer>
     </>
