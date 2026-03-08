@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import React from 'react';
+import { motion } from "framer-motion";
 import emailjs from '@emailjs/browser';
 import animate from "./assets/animate.mp4"
 import noteflow from "./assets/noteflow.PNG"
@@ -50,6 +51,7 @@ const LANG_DATA = {
     roles: ["Full-Stack Developer", "Creative Coder"],
     viewWork: "View My Work →",
     letsTalk: "Let's Talk",
+    downloadCV: "Download CV 📄",
     scroll: "scroll",
     s1label: "01 — Who I am",
     s1title: <>Ordinary by origin, Relentless by choice.<br /><em>Now building in code.</em></>,
@@ -88,6 +90,7 @@ const LANG_DATA = {
     roles: ["Développeuse Full-Stack", "Codeuse Créative"],
     viewWork: "Voir mes projets →",
     letsTalk: "Discutons",
+    downloadCV: "Télécharger CV 📄",
     scroll: "défiler",
     s1label: "01 — Qui je suis",
     s1title: <>Ordinaire par origine, Acharnée par choix.<br /><em>Maintenant, je construis en code.</em></>,
@@ -126,6 +129,7 @@ const LANG_DATA = {
     roles: ["مطوّرة Full-Stack", "مبرمجة مبدعة"],
     viewWork: "← استعرض أعمالي",
     letsTalk: "تواصل معي",
+    downloadCV: "تحميل السيرة الذاتية 📄",
     scroll: "تمرير",
     s1label: "٠١ — من أنا",
     s1title: <>عادية الأصل، لا تُقهر بالاختيار.<br /><em>أبني الآن بالكود.</em></>,
@@ -278,8 +282,8 @@ const css = `
   .btn-primary { background: var(--accent); color: #fff; border-color: var(--accent); }
   .btn-primary:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 8px 24px var(--accent-glow); }
   .btn-primary:disabled { opacity: 0.65; cursor: not-allowed; }
-  .btn-outline { background: transparent; color: var(--accent); border-color: var(--border); }
-  .btn-outline:hover { border-color: var(--accent); background: var(--accent-glow); transform: translateY(-2px); }
+  .btn-outline { background: transparent; color: var(--accent); border-color: var(--accent); }
+  .btn-outline:hover { background: var(--accent); color: #fff; transform: translateY(-2px); box-shadow: 0 8px 24px var(--accent-glow); }
   @keyframes fadeUp { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:translateY(0)} }
   .scroll-hint {
     position: absolute; bottom: 2.5rem; font-family: 'DM Mono', monospace; font-size: 0.7rem;
@@ -306,7 +310,7 @@ const css = `
   body[dir="rtl"] .section-title { font-family: 'Cairo', serif; }
   .section-title em { color: var(--accent); font-style: italic; }
   body[dir="rtl"] .section-title em { font-style: normal; }
-  .section-divider { width: 48px; height: 2px; background: var(--accent); border-radius: 2px; margin-bottom: 3rem; }
+  .section-divider { width: 48px; height: 3px; background: linear-gradient(90deg, var(--accent), transparent); border-radius: 2px; margin-bottom: 3rem; }
 
   /* ── ABOUT ── */
   .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
@@ -593,6 +597,7 @@ export default function Portfolio() {
         <div className="hero-btns">
           <a href="#projects" className="btn btn-primary">{tx.viewWork}</a>
           <a href="#contact"  className="btn btn-outline">{tx.letsTalk}</a>
+          <a href="public/My Cv.pdf" download="IKRAM_CV" className="btn btn-outline">{tx.downloadCV}</a>
         </div>
         <div className="scroll-hint">
           <div className="scroll-line" />
@@ -602,39 +607,43 @@ export default function Portfolio() {
 
       {/* ── ABOUT ── */}
       <section id="about">
-        <div className="section-label">{tx.s1label}</div>
-        <h2 className="section-title">{tx.s1title}</h2>
-        <div className="section-divider" />
+        <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
+          <div className="section-label">{tx.s1label}</div>
+          <h2 className="section-title">{tx.s1title}</h2>
+          <div className="section-divider" />
+        </motion.div>
         <div className="about-grid">
-          <div className="about-img-wrap">
+          <motion.div className="about-img-wrap" initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.2 }}>
             <video
               src= {animate}
               autoPlay loop muted playsInline
               style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: "22px" }}
             />
-          </div>
-          <div className="about-text">
+          </motion.div>
+          <motion.div className="about-text" initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.3 }}>
             {tx.bio.map((para, i) => <p key={i}>{para}</p>)}
             <div className="about-stats">
               <div className="stat"><div className="stat-num">23</div><div className="stat-label">{tx.statAge}</div></div>
               <div className="stat"><div className="stat-num">6+</div><div className="stat-label">{tx.statProjects}</div></div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* ── SKILLS ── */}
       <section id="skills" style={{ background: "var(--bg2)", maxWidth: "100%", borderTop: "1px solid var(--border)", borderBottom: "1px solid var(--border)" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
-          <div className="section-label">{tx.s2label}</div>
-          <h2 className="section-title">{tx.s2title}</h2>
-          <div className="section-divider" />
+          <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
+            <div className="section-label">{tx.s2label}</div>
+            <h2 className="section-title">{tx.s2title}</h2>
+            <div className="section-divider" />
+          </motion.div>
           <div className="skills-grid">
-            {SKILLS.map(s => (
-              <div key={s.name} className="skill-card">
+            {SKILLS.map((s, i) => (
+              <motion.div key={s.name} className="skill-card" initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.05 }}>
                 <div className="skill-icon">{s.icon}</div>
                 <div className="skill-name">{s.name}</div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -642,11 +651,13 @@ export default function Portfolio() {
 
       {/* ── PROJECTS ── */}
       <section id="projects">
-        <div className="section-label">{tx.s3label}</div>
-        <h2 className="section-title">{tx.s3title}</h2>
-        <div className="section-divider" />
+        <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
+          <div className="section-label">{tx.s3label}</div>
+          <h2 className="section-title">{tx.s3title}</h2>
+          <div className="section-divider" />
+        </motion.div>
         <div className="projects-grid">
-          <div className="project-card">
+          <motion.div className="project-card" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }}>
             <div className="project-thumb">
               <img src= {noteflow} alt="NoteFlow" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
             </div>
@@ -663,17 +674,19 @@ export default function Portfolio() {
                 <a href="#" className="project-link">{tx.github}</a>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* ── CONTACT ── */}
       <section id="contact" style={{ background: "var(--bg2)", maxWidth: "100%", borderTop: "1px solid var(--border)" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
-          <div className="section-label">{tx.s4label}</div>
-          <h2 className="section-title">{tx.s4title}</h2>
-          <div className="section-divider" />
-          <div className="contact-inner">
+          <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
+            <div className="section-label">{tx.s4label}</div>
+            <h2 className="section-title">{tx.s4title}</h2>
+            <div className="section-divider" />
+          </motion.div>
+          <motion.div className="contact-inner" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.2 }}>
             <p>{tx.contactDesc}</p>
 
             {/* ── SUCCESS STATE ── */}
@@ -717,7 +730,7 @@ export default function Portfolio() {
                 </div>
               </form>
             )}
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -727,6 +740,7 @@ export default function Portfolio() {
         <span>{tx.footerBuilt}</span>
         <div className="footer-socials">
           <a href="https://www.instagram.com/_o.ik_/">instagram</a>
+          <a href="https://github.com/ikoo-oo">github</a>
         </div>
       </footer>
     </>
