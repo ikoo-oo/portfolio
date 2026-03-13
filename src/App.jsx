@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import emailjs from '@emailjs/browser';
 import animate from "./assets/animate.mp4"
 import noteflow from "./assets/noteflow.PNG"
+import { a } from "framer-motion/client";
 
 // ── THEME TOKENS ──────────────────────────────────────────────
 const themes = {
@@ -67,7 +68,7 @@ const LANG_DATA = {
     s2title: <>My <em>toolkit</em></>,
     s3label: "03 — What I've built",
     s3title: <>Selected <em>projects</em></>,
-    liveDemo: "Live Demo ↗", github: "GitHub",
+    liveDemo: <a href="https://noteflow-oxy1.onrender.com/">Live Demo↗</a>, github: "GitHub",
     projectDesc: "Full-stack Note website Built with Java, Spring Boot that uses dependencies such as Spring Data JPA, Lombok, H2 Database that allows users to create, read, update, and delete notes through a RESTful API.",
     s4label: "04 — Get in touch",
     s4title: <>Let's <em>work</em> together</>,
@@ -106,7 +107,7 @@ const LANG_DATA = {
     s2title: <>Mes <em>outils</em></>,
     s3label: "03 — Ce que j'ai créé",
     s3title: <>Projets <em>sélectionnés</em></>,
-    liveDemo: "Démo en direct ↗", github: "GitHub",
+    liveDemo: <a href="https://noteflow-oxy1.onrender.com/">Voir la demo ↗</a>, github: "GitHub",
     projectDesc: "Site de notes full-stack développé avec Java et Spring Boot, utilisant Spring Data JPA, Lombok et H2 Database. Permet aux utilisateurs de créer, lire, mettre à jour et supprimer des notes via une API RESTful.",
     s4label: "04 — Me contacter",
     s4title: <>Travaillons <em>ensemble</em></>,
@@ -145,7 +146,7 @@ const LANG_DATA = {
     s2title: <>أدواتي <em>التقنية</em></>,
     s3label: "٠٣ — ما بنيته",
     s3title: <>مشاريع <em>مختارة</em></>,
-    liveDemo: "عرض مباشر ↗", github: "GitHub",
+    liveDemo: <a href="https://noteflow-oxy1.onrender.com/"> تجربة مباشرة</a> , github: "GitHub",
     projectDesc: "موقع ملاحظات متكامل مبني بـ Java وSpring Boot، يستخدم Spring Data JPA وLombok وH2 Database. يتيح للمستخدمين إنشاء الملاحظات وقراءتها وتحديثها وحذفها عبر RESTful API.",
     s4label: "٠٤ — تواصل معي",
     s4title: <>لنعمل <em>معاً</em></>,
