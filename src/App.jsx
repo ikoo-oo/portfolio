@@ -69,15 +69,24 @@ const LANG_DATA = {
     s2title: <>My <em>toolkit</em></>,
     s3label: "03 — What I've built",
     s3title: <>Selected <em>projects</em></>,
-    projectimg: noteflow,
-    projectTitle: "NoteFlow",
-    liveDemo: <a href="https://noteflow-oxy1.onrender.com/">Live Demo↗</a>, github: "GitHub",
-    projectDesc: "Full-stack Note website Built with Java, Spring Boot that uses dependencies such as Spring Data JPA, Lombok, H2 Database that allows users to create, read, update, and delete notes through a RESTful API.",
-    s4label: "04 — Get in touch",
-    projectimg: gestionequipements,
-    projectTitle: "Gestion d'equipements",
-    liveDemo: <a href="https://gestion-equipements.onrender.com/">Live Demo↗</a>, github: "GitHub",
-    projectDesc: "un site web qui permet de gestion d'equipements, il connecte trois acteurs principaux : les Ressources Humaines (RH), le Manager IT, et les Techniciens.",
+    projects: [
+      {
+        img: noteflow,
+        title: "NoteFlow",
+        tags: ["Java", "Spring Boot", "H2 Database", "REST API", "Lombok"],
+        desc: "Full-stack Note website Built with Java, Spring Boot that uses dependencies such as Spring Data JPA, Lombok, H2 Database that allows users to create, read, update, and delete notes through a RESTful API.",
+        liveDemo: <a href="https://noteflow-oxy1.onrender.com/">Live Demo↗</a>,
+        github: "GitHub",
+      },
+      {
+        img: gestionequipements,
+        title: "Gestion d'equipements",
+        tags: ["Laravel", "PHP", "MySQL"],
+        desc: "un site web qui permet de gestion d'equipements, il connecte trois acteurs principaux : les Ressources Humaines (RH), le Manager IT, et les Techniciens.",
+        liveDemo: <a href="https://gestion-equipements.onrender.com/">Live Demo↗</a>,
+        github: "GitHub",
+      },
+    ],
     s4label: "04 — Get in touch",
     s4title: <>Let's <em>work</em> together</>,
     contactDesc: "Have a project in mind? I'd love to hear about it. Send me a message and let's create something wonderful together.",
@@ -115,15 +124,24 @@ const LANG_DATA = {
     s2title: <>Mes <em>outils</em></>,
     s3label: "03 — Ce que j'ai créé",
     s3title: <>Projets <em>sélectionnés</em></>,
-    projectimg: noteflow,
-    projectTitle: "NoteFlow",
-    liveDemo: <a href="https://noteflow-oxy1.onrender.com/">Voir la demo ↗</a>, github: "GitHub",
-    projectDesc: "Site de notes full-stack développé avec Java et Spring Boot, utilisant Spring Data JPA, Lombok et H2 Database. Permet aux utilisateurs de créer, lire, mettre à jour et supprimer des notes via une API RESTful.",
-    s4label: "04 — Get in touch",
-    projectTitle: "Gestion d'equipements",
-    projectimg: gestionequipements,
-    liveDemo: <a href="https://gestion-equipements.onrender.com/">Voir la demo↗</a>, github: "GitHub",
-    projectDesc: "un site web qui permet de gestion d'equipements, il connecte trois acteurs principaux : les Ressources Humaines (RH), le Manager IT, et les Techniciens.",
+    projects: [
+      {
+        img: noteflow,
+        title: "NoteFlow",
+        tags: ["Java", "Spring Boot", "H2 Database", "REST API", "Lombok"],
+        desc: "Site de notes full-stack développé avec Java et Spring Boot, utilisant Spring Data JPA, Lombok et H2 Database. Permet aux utilisateurs de créer, lire, mettre à jour et supprimer des notes via une API RESTful.",
+        liveDemo: <a href="https://noteflow-oxy1.onrender.com/">Voir la demo ↗</a>,
+        github: "GitHub",
+      },
+      {
+        img: gestionequipements,
+        title: "Gestion d'equipements",
+        tags: ["Laravel", "PHP", "MySQL"],
+        desc: "un site web qui permet de gestion d'equipements, il connecte trois acteurs principaux : les Ressources Humaines (RH), le Manager IT, et les Techniciens.",
+        liveDemo: <a href="https://gestion-equipements.onrender.com/">Voir la demo↗</a>,
+        github: "GitHub",
+      },
+    ],
     s4label: "04 — Me contacter",
     s4title: <>Travaillons <em>ensemble</em></>,
     contactDesc: "Vous avez un projet en tête ? J'adorerais en entendre parler. Envoyez-moi un message et créons quelque chose de merveilleux ensemble.",
@@ -161,14 +179,24 @@ const LANG_DATA = {
     s2title: <>أدواتي <em>التقنية</em></>,
     s3label: "٠٣ — ما بنيته",
     s3title: <>مشاريع <em>مختارة</em></>,
-    projectTitle: "NoteFlow",
-    projectimg: noteflow,
-    liveDemo: <a href="https://noteflow-oxy1.onrender.com/"> تجربة مباشرة</a> , github: "GitHub",
-    projectDesc: "موقع ملاحظات متكامل مبني بـ Java وSpring Boot، يستخدم Spring Data JPA وLombok وH2 Database. يتيح للمستخدمين إنشاء الملاحظات وقراءتها وتحديثها وحذفها عبر RESTful API.",
-     projectTitle: "Gestion d'equipements",
-    projectimg: gestionequipements,
-    liveDemo: <a href="https://gestion-equipements.onrender.com/">Voir la demo↗</a>, github: "GitHub",
-    projectDesc: "موقع ويب لإدارة المعدات، يربط بين ثلاثة أطراف رئيسية: الموارد البشرية، مدير تكنولوجيا المعلومات، والفنيين.",
+    projects: [
+      {
+        img: noteflow,
+        title: "NoteFlow",
+        tags: ["Java", "Spring Boot", "H2 Database", "REST API", "Lombok"],
+        desc: "موقع ملاحظات متكامل مبني بـ Java وSpring Boot، يستخدم Spring Data JPA وLombok وH2 Database. يتيح للمستخدمين إنشاء الملاحظات وقراءتها وتحديثها وحذفها عبر RESTful API.",
+        liveDemo: <a href="https://noteflow-oxy1.onrender.com/"> تجربة مباشرة</a>,
+        github: "GitHub",
+      },
+      {
+        img: gestionequipements,
+        title: "Gestion d'equipements",
+        tags: ["Laravel", "PHP", "MySQL"],
+        desc: "موقع ويب لإدارة المعدات، يربط بين ثلاثة أطراف رئيسية: الموارد البشرية، مدير تكنولوجيا المعلومات، والفنيين.",
+        liveDemo: <a href="https://gestion-equipements.onrender.com/">Voir la demo↗</a>,
+        github: "GitHub",
+      },
+    ],
     s4label: "٠٤ — تواصل معي",
     s4title: <>لنعمل <em>معاً</em></>,
     contactDesc: "هل لديك مشروع في ذهنك؟ يسعدني سماع تفاصيله. أرسل لي رسالة ولنبنِ شيئاً رائعاً معاً.",
@@ -679,56 +707,28 @@ export default function Portfolio() {
           <div className="section-divider" />
         </motion.div>
         <div className="projects-grid">
-          <motion.div className="project-card" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }}>
-            <div className="project-thumb">
-              <img src= {tx.projectimg} alt={tx.projectTitle} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
-            </div>
-            <div className="project-body">
-              <div className="project-tags">
-                {["Java", "Spring Boot", "H2 Database", "REST API", "Lombok"].map(tag => (
-                  <span key={tag} className="project-tag">{tag}</span>
-                ))}
+          {tx.projects.map((project, idx) => (
+            <motion.div key={idx} className="project-card" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 * idx }}>
+              <div className="project-thumb">
+                <img src={project.img} alt={project.title} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
               </div>
-              <div className="project-title">{tx.projectTitle}</div>
-              <p className="project-desc">{tx.projectDesc}</p>
-              <div className="project-links">
-                <a href="#" className="project-link">{tx.liveDemo}</a>
-                <a href="#" className="project-link">{tx.github}</a>
+              <div className="project-body">
+                <div className="project-tags">
+                  {project.tags.map(tag => (
+                    <span key={tag} className="project-tag">{tag}</span>
+                  ))}
+                </div>
+                <div className="project-title">{project.title}</div>
+                <p className="project-desc">{project.desc}</p>
+                <div className="project-links">
+                  <a href="#" className="project-link">{project.liveDemo}</a>
+                  <a href="#" className="project-link">{project.github}</a>
+                </div>
               </div>
-            </div>
-            
-          </motion.div>
-          
-          <motion.div className="project-card" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }}>
-            <div className="project-thumb">
-              <img src= {tx.projectimg} alt={tx.projectTitle} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
-            </div>
-            <div className="project-body">
-              <div className="project-tags">
-                {["Laravel", "PHP", "MySQL"].map(tag => (
-                  <span key={tag} className="project-tag">{tag}</span>
-                ))}
-              </div>
-              <div className="project-title">{tx.projectTitle}</div>
-              <p className="project-desc">{tx.projectDesc}</p>
-              <div className="project-links">
-                <a href="#" className="project-link">{tx.liveDemo}</a>
-                <a href="#" className="project-link">{tx.github}</a>
-              </div>
-            </div>
-            
-          </motion.div>
-        </div>
-      </section>
-
-      {/* ── CONTACT ── */}
-      <section id="contact" style={{ background: "var(--bg2)", maxWidth: "100%", borderTop: "1px solid var(--border)" }}>
-        <div style={{ maxWidth: 1100, margin: "0 auto" }}>
-          <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
-            <div className="section-label">{tx.s4label}</div>
+            </motion.div>
+          ))}
             <h2 className="section-title">{tx.s4title}</h2>
             <div className="section-divider" />
-          </motion.div>
           <motion.div className="contact-inner" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.2 }}>
             <p>{tx.contactDesc}</p>
 
