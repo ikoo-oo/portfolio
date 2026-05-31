@@ -681,7 +681,7 @@ export default function Portfolio() {
         <div className="projects-grid">
           <motion.div className="project-card" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }}>
             <div className="project-thumb">
-              <img src= {noteflow} alt="NoteFlow" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+              <img src= {tx.projectimg} alt={tx.projectTitle} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
             </div>
             <div className="project-body">
               <div className="project-tags">
@@ -696,6 +696,27 @@ export default function Portfolio() {
                 <a href="#" className="project-link">{tx.github}</a>
               </div>
             </div>
+            
+          </motion.div>
+          
+          <motion.div className="project-card" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }}>
+            <div className="project-thumb">
+              <img src= {tx.projectimg} alt={tx.projectTitle} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+            </div>
+            <div className="project-body">
+              <div className="project-tags">
+                {["Laravel", "PHP", "MySQL"].map(tag => (
+                  <span key={tag} className="project-tag">{tag}</span>
+                ))}
+              </div>
+              <div className="project-title">{tx.projectTitle}</div>
+              <p className="project-desc">{tx.projectDesc}</p>
+              <div className="project-links">
+                <a href="#" className="project-link">{tx.liveDemo}</a>
+                <a href="#" className="project-link">{tx.github}</a>
+              </div>
+            </div>
+            
           </motion.div>
         </div>
       </section>
