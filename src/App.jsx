@@ -80,9 +80,9 @@ const LANG_DATA = {
       },
       {
         img: gestionequipements,
-        title: "Gestion d'equipements",
+        title: "Equipment Management",
         tags: ["Laravel", "PHP", "MySQL"],
-        desc: "un site web qui permet de gestion d'equipements, il connecte trois acteurs principaux : les Ressources Humaines (RH), le Manager IT, et les Techniciens.",
+        desc: "A web application for equipment management, connecting three main actors: Human Resources (HR), IT Manager, and Technicians.",
         liveDemo: <a href="https://gestion-equipements.onrender.com/">Live Demo↗</a>,
         github: "GitHub",
       },
